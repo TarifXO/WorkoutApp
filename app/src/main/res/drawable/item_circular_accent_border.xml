@@ -8,6 +8,6 @@
         android:width="5dp"
         android:color="@color/cherry_red"/>
     <solid
-        android:color="@color/white"/>
+        android:color="@color/cherry_red"/>
 
 </shape>
