@@ -17,5 +17,7 @@
 
     <color name="toolBar_color_control_normal">#000000</color>
 
+    <color name="colorGray">#EBEBEB</color>
+
 
 </resources>

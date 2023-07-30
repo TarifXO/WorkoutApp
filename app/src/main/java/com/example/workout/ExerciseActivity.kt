@@ -22,11 +22,11 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private var binding : ActivityExerciseBinding? = null
     private var restTimer : CountDownTimer? = null
     private var restProgress = 0
-    private var restFinishTime : Long = 1
+    private var restFinishTime : Long = 10
 
     private var exerciseTimer : CountDownTimer? = null
     private var exerciseProgress = 0
-    private var exerciseFinishTime : Long = 1
+    private var exerciseFinishTime : Long = 30
 
     private var exerciseList : ArrayList<ExerciseModel>? = null
     private var currentExercisePosition = -1
@@ -99,7 +99,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     }
     private fun setupRestView() {
         try{
-            val soundURI = Uri.parse("android.resource://tarif.xo.a7minutesworkoutapp/" + R.raw.press_start)
+            val soundURI = Uri.parse("android.resource://com.example.workout/" + R.raw.press_start)
             player = MediaPlayer.create(applicationContext, soundURI)
             player?.isLooping = false
             player?.start()
@@ -148,7 +148,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     }
     private fun setRestProgressBar(){
         binding?.progressBar?.progress = restProgress
-        restTimer = object : CountDownTimer(restFinishTime*1000,1000){
+        restTimer = object : CountDownTimer(10000,1000){
             override fun onTick(millisUntilFinished: Long) {
                 restProgress++
                 binding?.progressBar?.progress = restFinishTime.toInt() - restProgress
@@ -167,7 +167,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     private fun setExerciseProgressBar(){
         binding?.ExerciseBar?.progress = exerciseProgress
-        exerciseTimer = object : CountDownTimer(exerciseFinishTime*1000,1000){
+        exerciseTimer = object : CountDownTimer(30000,1000){
             override fun onTick(millisUntilFinished: Long) {
                 exerciseProgress++
                 binding?.ExerciseBar?.progress = exerciseFinishTime.toInt()- exerciseProgress

@@ -3,6 +3,7 @@ package com.example.workout
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.workout.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -14,6 +15,8 @@ class MainActivity : AppCompatActivity() {
 
 
         super.onCreate(savedInstanceState)
+        Thread.sleep(3000)
+        installSplashScreen()
 
 
         binding = ActivityMainBinding.inflate(layoutInflater)
