@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
 
         super.onCreate(savedInstanceState)
-        Thread.sleep(3000)
+        Thread.sleep(1000)
         installSplashScreen()
 
 
